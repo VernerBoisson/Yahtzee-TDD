@@ -1,32 +1,9 @@
-def ones(dices_tuple):
+def find_by_combination(dice_tuple, number_combination):
     sum = 0
-    for dice in dices_tuple:
-        if dice == 1:
-            sum += 1
+    for i in dice_tuple:
+        if i == number_combination:
+            sum += number_combination
     return sum
-
-def twos(dices_tuple):
-    sum = 0
-    for dice in dices_tuple:
-        if dice == 2:
-            sum += 2
-    return sum
-
-def threes(dices_tuple):
-    sum = 0
-    for dice in dices_tuple:
-        if dice == 3:
-            sum += 3
-    return sum
-
-def fours():
-    return 0
-
-def fives():
-    return 0
-
-def sixes():
-    return 0
 
 def three_of_a_kind():
     return 0
