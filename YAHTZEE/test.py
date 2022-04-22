@@ -8,3 +8,6 @@ class TestCombinationOnes(unittest.TestCase):
         self.assertAlmostEqual(game.ones((1,2,1,4,5)), 2)
     def test_combination_ones_nothing(self):
         self.assertAlmostEqual(game.ones((6,2,6,4,5)), 0)
+
+if __name__ == '__main__':
+    unittest.main()
