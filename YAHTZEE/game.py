@@ -5,7 +5,7 @@ def ones(dices_tuple):
             sum += 1
     return sum
 
-def twos():
+def twos(dices_tuple):
     return 0
 
 def threes():
