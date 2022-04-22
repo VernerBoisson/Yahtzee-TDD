@@ -53,6 +53,16 @@ class TestThreeOfAKind(unittest.TestCase):
         self.assertAlmostEqual(game.three_of_a_kind((6,6,6,6,6)), 30)
         self.assertAlmostEqual(game.three_of_a_kind((5,5,5,5,2)), 22)
 
+class TestFourOfAKind(unittest.TestCase):
+    def test_four_of_a_kind_nothing(self):
+        self.assertAlmostEqual(game.four_of_a_kind((1,1,2,2,3)), 0)
+        self.assertAlmostEqual(game.four_of_a_kind((1,4,5,2,3)), 0)
+        self.assertAlmostEqual(game.four_of_a_kind((1,6,6,2,2)), 0)
+        self.assertAlmostEqual(game.four_of_a_kind((1,1,1,2,3)), 0)
+    def test_four_of_a_kind_three(self):
+        self.assertAlmostEqual(game.four_of_a_kind((5,5,5,5,2)), 22)
+    def test_four_of_a_kind_more_than_tree(self):
+        self.assertAlmostEqual(game.four_of_a_kind((6,6,6,6,6)), 30)
 
 if __name__ == '__main__':
     unittest.main()

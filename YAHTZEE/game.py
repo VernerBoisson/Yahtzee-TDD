@@ -11,7 +11,13 @@ def three_of_a_kind(dice_tuple):
             return sum(dice_tuple)
     return 0
 
-def four_of_a_kind():
+def four_of_a_kind(dice_tuple):
+    for i in dice_tuple:
+        if dice_tuple.count(i) >= 4:
+            return sum(dice_tuple)
+    return 0
+
+def yahtzee():
     return 0
 
 def full_house():
@@ -24,7 +30,4 @@ def large_straight():
     return 0
 
 def chance():
-    return 0
-
-def yahtzee():
     return 0
