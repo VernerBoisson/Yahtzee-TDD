@@ -1,5 +1,9 @@
-def ones():
-    return 0
+def ones(dices_tuple):
+    sum = 0
+    for dice in dices_tuple:
+        if dice == 1:
+            sum += 1
+    return sum
 
 def twos():
     return 0
