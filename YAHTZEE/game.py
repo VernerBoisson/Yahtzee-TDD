@@ -12,8 +12,12 @@ def twos(dices_tuple):
             sum += 2
     return sum
 
-def threes():
-    return 0
+def threes(dices_tuple):
+    sum = 0
+    for dice in dices_tuple:
+        if dice == 3:
+            sum += 3
+    return sum
 
 def fours():
     return 0

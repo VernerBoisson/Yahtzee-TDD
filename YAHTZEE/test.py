@@ -17,5 +17,13 @@ class TestCombinationTwos(unittest.TestCase):
     def test_combination_twos_nothing(self):
         self.assertAlmostEqual(game.twos((6,1,6,4,5)), 0)
 
+class TestCombinationThrees(unittest.TestCase):
+    def test_combination_threes_everything(self):
+        self.assertAlmostEqual(game.threes((3,3,3,3,3)), 15)
+    def test_combination_threes_some(self):
+        self.assertAlmostEqual(game.threes((1,2,3,4,3)), 6)
+    def test_combination_threes_nothing(self):
+        self.assertAlmostEqual(game.threes((6,1,6,4,5)), 0)
+
 if __name__ == '__main__':
     unittest.main()
