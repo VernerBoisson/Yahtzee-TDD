@@ -5,7 +5,10 @@ def find_by_combination(dice_tuple, number_combination):
             sum += number_combination
     return sum
 
-def three_of_a_kind():
+def three_of_a_kind(dice_tuple):
+    for i in dice_tuple:
+        if dice_tuple.count(i) >= 3:
+            return sum(dice_tuple)
     return 0
 
 def four_of_a_kind():
