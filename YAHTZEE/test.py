@@ -39,30 +39,35 @@ class TestCombination(unittest.TestCase):
     def test_combination_sixes_nothing(self):
         self.assertAlmostEqual(game.find_by_combination((2,1,1,4,5), 6), 0)
 
-class TestThreeOfAKind(unittest.TestCase):
+class TestNumberOfAKind(unittest.TestCase):
     def test_three_of_a_kind_nothing(self):
-        self.assertAlmostEqual(game.three_of_a_kind((1,1,2,2,3)), 0)
-        self.assertAlmostEqual(game.three_of_a_kind((1,4,5,2,3)), 0)
-        self.assertAlmostEqual(game.three_of_a_kind((1,6,6,2,2)), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,2,2,3), 3), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,4,5,2,3), 3), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,6,6,2,2), 3), 0)
     def test_three_of_a_kind_three(self):
-        self.assertAlmostEqual(game.three_of_a_kind((1,1,1,2,3)), 8)
-        self.assertAlmostEqual(game.three_of_a_kind((2,1,2,2,3)), 10)
-        self.assertAlmostEqual(game.three_of_a_kind((1,3,1,3,3)), 11)
-        self.assertAlmostEqual(game.three_of_a_kind((1,1,3,3,1)), 9)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,1,2,3), 3), 8)
+        self.assertAlmostEqual(game.find_number_of_a_kind((2,1,2,2,3), 3), 10)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,3,1,3,3), 3), 11)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,3,3,1), 3), 9)
     def test_three_of_a_kind_more_than_tree(self):
-        self.assertAlmostEqual(game.three_of_a_kind((6,6,6,6,6)), 30)
-        self.assertAlmostEqual(game.three_of_a_kind((5,5,5,5,2)), 22)
-
-class TestFourOfAKind(unittest.TestCase):
+        self.assertAlmostEqual(game.find_number_of_a_kind((6,6,6,6,6), 3), 30)
+        self.assertAlmostEqual(game.find_number_of_a_kind((5,5,5,5,2), 3), 22)
     def test_four_of_a_kind_nothing(self):
-        self.assertAlmostEqual(game.four_of_a_kind((1,1,2,2,3)), 0)
-        self.assertAlmostEqual(game.four_of_a_kind((1,4,5,2,3)), 0)
-        self.assertAlmostEqual(game.four_of_a_kind((1,6,6,2,2)), 0)
-        self.assertAlmostEqual(game.four_of_a_kind((1,1,1,2,3)), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,2,2,3), 4), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,4,5,2,3), 4), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,6,6,2,2), 4), 0)
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,1,2,3), 4), 0)
     def test_four_of_a_kind_three(self):
-        self.assertAlmostEqual(game.four_of_a_kind((5,5,5,5,2)), 22)
+        self.assertAlmostEqual(game.find_number_of_a_kind((5,5,5,5,2), 4), 22)
     def test_four_of_a_kind_more_than_tree(self):
-        self.assertAlmostEqual(game.four_of_a_kind((6,6,6,6,6)), 30)
+        self.assertAlmostEqual(game.find_number_of_a_kind((6,6,6,6,6), 4), 30)
+    def test_chance(self):
+        self.assertAlmostEqual(game.find_number_of_a_kind((3,3,4,4,5), 0), 19)
+    def test_yahtzee(self):
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,1,1,1), 5), 50)  
+    def test_yahtzee_nothing(self):
+        self.assertAlmostEqual(game.find_number_of_a_kind((1,1,1,1,3), 5), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
