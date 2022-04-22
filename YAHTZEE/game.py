@@ -6,7 +6,11 @@ def ones(dices_tuple):
     return sum
 
 def twos(dices_tuple):
-    return 0
+    sum = 0
+    for dice in dices_tuple:
+        if dice == 2:
+            sum += 2
+    return sum
 
 def threes():
     return 0
