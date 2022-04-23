@@ -14,7 +14,9 @@ def find_number_of_a_kind(dice_tuple, number_of_a_kind):
     return 0
 
 def full_house(dice_tuple):
-    if dice_tuple.count(dice_tuple[0]) == 2 and dice_tuple.count(dice_tuple[1]) == 3:
+    dice_tuple = sorted(dice_tuple)
+    if (dice_tuple.count(dice_tuple[0]) == 2 and dice_tuple.count(dice_tuple[-1]) == 3) or \
+        (dice_tuple.count(dice_tuple[0]) == 3 and dice_tuple.count(dice_tuple[-1]) == 2):
         return 25
     return 0
 

@@ -85,6 +85,18 @@ class Teststraight(unittest.TestCase):
         self.assertAlmostEqual(game.find_straight((1,2,3,4,5), 'large'), 40)
         self.assertAlmostEqual(game.find_straight((2,6,3,4,5), 'large'), 40)
 
+class TestFullHouse(unittest.TestCase):
+    def test_fullhouse_nothing(self):
+        self.assertAlmostEqual(game.full_house((1,2,3,1,1)), 0)
+        self.assertAlmostEqual(game.full_house((1,2,3,1,1)), 0)
+        self.assertAlmostEqual(game.full_house((1,2,3,1,1)), 0)
+        self.assertAlmostEqual(game.full_house((1,2,3,1,1)), 0)
+    def test_fullhouse_one(self):
+        self.assertAlmostEqual(game.full_house((1,1,6,6,1)), 25)
+        self.assertAlmostEqual(game.full_house((1,1,1,2,2)), 25)
+        self.assertAlmostEqual(game.full_house((1,1,2,2,2)), 25)
+        self.assertAlmostEqual(game.full_house((2,3,2,3,2)), 25)
+        self.assertAlmostEqual(game.full_house((6,3,3,3,6)), 25)
 
 
 if __name__ == '__main__':
