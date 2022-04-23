@@ -71,19 +71,19 @@ class TestNumberOfAKind(unittest.TestCase):
 
 class Teststraight(unittest.TestCase):
     def test_small_straight_nothing(self):
-        self.assertAlmostEqual(game.small_straight((1,1,1,1,1)), 0)
-        self.assertAlmostEqual(game.small_straight((1,2,3,1,1)), 0)
-        self.assertAlmostEqual(game.small_straight((1,4,5,6,1)), 0)
+        self.assertAlmostEqual(game.find_straight((1,1,1,1,1), 'small'), 0)
+        self.assertAlmostEqual(game.find_straight((1,2,3,1,1), 'small'), 0)
+        self.assertAlmostEqual(game.find_straight((1,4,5,6,1), 'small'), 0)
     def test_small_straight_one(self):
-        self.assertAlmostEqual(game.small_straight((1,2,3,4,1)), 30)
-        self.assertAlmostEqual(game.small_straight((1,6,3,4,5)), 30)
+        self.assertAlmostEqual(game.find_straight((1,2,3,4,1), 'small'), 30)
+        self.assertAlmostEqual(game.find_straight((1,6,3,4,5), 'small'), 30)
     def test_large_straight_nothing(self):
-        self.assertAlmostEqual(game.large_straight((1,1,1,1,1)), 0)
-        self.assertAlmostEqual(game.large_straight((2,2,3,4,5)), 0)
-        self.assertAlmostEqual(game.large_straight((1,4,5,6,3)), 0)
+        self.assertAlmostEqual(game.find_straight((1,1,1,1,1), 'large'), 0)
+        self.assertAlmostEqual(game.find_straight((2,2,3,4,5), 'large'), 0)
+        self.assertAlmostEqual(game.find_straight((1,4,5,6,3), 'large'), 0)
     def test_large_straight_one(self):
-        self.assertAlmostEqual(game.large_straight((1,2,3,4,5)), 40)
-        self.assertAlmostEqual(game.large_straight((2,6,3,4,5)), 40)
+        self.assertAlmostEqual(game.find_straight((1,2,3,4,5), 'large'), 40)
+        self.assertAlmostEqual(game.find_straight((2,6,3,4,5), 'large'), 40)
 
 
 
