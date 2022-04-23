@@ -69,5 +69,23 @@ class TestNumberOfAKind(unittest.TestCase):
         self.assertAlmostEqual(game.find_number_of_a_kind((1,1,1,1,3), 5), 0)
 
 
+class Teststraight(unittest.TestCase):
+    def test_small_straight_nothing(self):
+        self.assertAlmostEqual(game.small_straight((1,1,1,1,1)), 0)
+        self.assertAlmostEqual(game.small_straight((1,2,3,1,1)), 0)
+        self.assertAlmostEqual(game.small_straight((1,4,5,6,1)), 0)
+    def test_small_straight_one(self):
+        self.assertAlmostEqual(game.small_straight((1,2,3,4,1)), 30)
+        self.assertAlmostEqual(game.small_straight((1,6,3,4,5)), 30)
+    def test_large_straight_nothing(self):
+        self.assertAlmostEqual(game.large_straight((1,1,1,1,1)), 0)
+        self.assertAlmostEqual(game.large_straight((2,2,3,4,5)), 0)
+        self.assertAlmostEqual(game.large_straight((1,4,5,6,3)), 0)
+    def test_large_straight_one(self):
+        self.assertAlmostEqual(game.large_straight((1,2,3,4,5)), 40)
+        self.assertAlmostEqual(game.large_straight((2,6,3,4,5)), 40)
+
+
+
 if __name__ == '__main__':
     unittest.main()
